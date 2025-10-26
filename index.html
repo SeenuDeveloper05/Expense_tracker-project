@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>💰 Smart Expense Tracker</h1>
+
+    <!-- Top Section: Form + Total -->
+    <div class="top-row">
+      <div class="card form-card">
+        <h3>Add Expense</h3>
+        <form id="expense-form">
+          <input type="text" id="name" placeholder="Expense name" required />
+          <input type="number" id="amount" placeholder="Amount (₹)" required />
+          <input type="text" id="category" placeholder="Category" required />
+          <input type="date" id="date" required />
+          <button type="submit">Add</button>
+        </form>
+      </div>
+
+      <div class="card total-card">
+        <h3>Total Spent</h3>
+        <h2>₹<span id="total">0</span></h2>
+      </div>
+    </div>
+
+    <!-- Middle Section: Filters + Chart -->
+    <div class="middle-row">
+      <div class="card filter-card">
+        <h3>Filter Expenses</h3>
+        <div class="filters">
+          <input type="text" id="filter-category" placeholder="Search by category" />
+          <input type="date" id="filter-date" />
+          <button id="reset-filter">Reset</button>
+        </div>
+      </div>
+
+      <div class="card chart-card">
+        <h3>Expense Breakdown</h3>
+        <canvas id="expenseChart" width="220" height="220"></canvas>
+      </div>
+    </div>
+
+    <!-- Bottom Section: Expense Table -->
+    <div class="card table-card">
+      <h3>All Expenses</h3>
+      <table id="expense-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
